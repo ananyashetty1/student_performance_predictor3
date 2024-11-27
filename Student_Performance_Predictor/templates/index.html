@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Prediction Task</title>
+</head>
+<body>
+    <h1>This is the task by Ananya</h1>
+
+    <h2>Steps to use:</h2>
+    <ol>
+        <li>
+            <strong>Open Developer Tools in Your Browser:</strong>
+            <ul>
+                <li>Right-click on the page and select <strong>Inspect</strong> or <strong>Inspect Element</strong>.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Go to the Console Tab:</strong>
+            <ul>
+                <li>Click on the <strong>Console</strong> tab in the Developer Tools window.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Use the below JSON Object and Execute:</strong>
+            <ul>
+                <li>use the below javascript snippet</li>
+                <pre>
+fetch('http://127.0.0.1:5000/predict', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        "exam_1_marks": 75,
+        "exam_2_marks": 80,
+        "exam_3_marks": 85,
+        "exam_4_marks": 78,
+        "exam_5_marks": 82,
+        "exam_6_marks": 88,
+        "attendance_rate": 90,
+        "activity_score": 70
+    })
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+});
+                </pre>
+            </ul>
+        </li>
+        <li>
+            <strong>View the Prediction Output:</strong>
+            <ul>
+                <li>Once you press <strong>Enter</strong>, the result will be shown directly in the console.</li>
+                <li>The result will look like this:</li>
+                <pre>
+{
+    "predicted_marks": 82.91
+}
+                </pre>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Thank You!</h3>
+</body>
+</html>
